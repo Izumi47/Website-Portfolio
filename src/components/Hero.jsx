@@ -11,7 +11,7 @@ const Hero = () => {
             justifyContent: 'center',
             position: 'relative',
             overflow: 'hidden',
-            paddingTop: '80px'
+            paddingTop: '120px'
         }}>
             {/* Background Elements */}
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1, overflow: 'hidden' }}>
