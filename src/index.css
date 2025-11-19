@@ -38,6 +38,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-color);

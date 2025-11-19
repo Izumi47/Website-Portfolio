@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 const Navbar = () => {
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav style={{
       position: 'fixed',
@@ -20,13 +28,13 @@ const Navbar = () => {
       borderRadius: '1rem'
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link to="/" style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: 'var(--font-display)' }}>
+        <Link to="/" style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: 'var(--font-display)' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <span className="gradient-text">Portfolio.</span>
         </Link>
         <ul style={{ display: 'flex', gap: '2rem' }}>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>About</a></li>
+          <li><a href="#projects" onClick={(e) => handleScroll(e, 'projects')}>Projects</a></li>
+          <li><a href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Contact</a></li>
         </ul>
       </div>
     </nav>
