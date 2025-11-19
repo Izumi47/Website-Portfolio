@@ -14,41 +14,41 @@ const Hero = () => {
             paddingTop: '80px'
         }}>
             {/* Background Elements */}
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1, overflow: 'hidden' }}>
                 <motion.div
                     animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 90, 0],
-                        opacity: [0.3, 0.5, 0.3]
+                        scale: [1, 1.1, 1],
+                        opacity: [0.2, 0.3, 0.2]
                     }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                     style={{
                         position: 'absolute',
                         top: '-20%',
                         left: '-10%',
-                        width: '50vw',
-                        height: '50vw',
-                        background: 'radial-gradient(circle, var(--primary-color) 0%, transparent 70%)',
-                        filter: 'blur(100px)',
-                        borderRadius: '50%'
+                        width: '60vw',
+                        height: '60vw',
+                        background: 'radial-gradient(circle, rgba(109, 40, 217, 0.4) 0%, transparent 70%)',
+                        borderRadius: '50%',
+                        willChange: 'transform, opacity',
+                        transform: 'translateZ(0)'
                     }}
                 />
                 <motion.div
                     animate={{
-                        scale: [1, 1.5, 1],
-                        rotate: [0, -90, 0],
-                        opacity: [0.2, 0.4, 0.2]
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.2, 0.1]
                     }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                     style={{
                         position: 'absolute',
                         bottom: '-20%',
                         right: '-10%',
-                        width: '60vw',
-                        height: '60vw',
-                        background: 'radial-gradient(circle, var(--secondary-color) 0%, transparent 70%)',
-                        filter: 'blur(120px)',
-                        borderRadius: '50%'
+                        width: '70vw',
+                        height: '70vw',
+                        background: 'radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%)',
+                        borderRadius: '50%',
+                        willChange: 'transform, opacity',
+                        transform: 'translateZ(0)'
                     }}
                 />
             </div>

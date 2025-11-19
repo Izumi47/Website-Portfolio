@@ -35,16 +35,28 @@ const ProjectCard = ({ project, index }) => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             className="glass"
-            style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+            style={{
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                willChange: 'transform, opacity',
+                transform: 'translateZ(0)'
+            }}
         >
             <div style={{ height: '200px', overflow: 'hidden' }}>
                 <img
                     src={project.image}
                     alt={project.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
-                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        transition: 'transform 0.3s ease-out',
+                        willChange: 'transform'
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                     onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
                 />
             </div>

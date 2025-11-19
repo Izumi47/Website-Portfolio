@@ -4,7 +4,21 @@ import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 const Navbar = () => {
   return (
-    <nav className="glass" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, padding: '1rem 2rem', margin: '1rem', marginTop: '1rem' }}>
+    <nav style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 100,
+      padding: '1rem 2rem',
+      margin: '1rem',
+      marginTop: '1rem',
+      background: 'rgba(10, 10, 10, 0.8)', // Fallback / stronger base
+      backdropFilter: 'blur(8px)',
+      WebkitBackdropFilter: 'blur(8px)',
+      border: '1px solid var(--surface-border)',
+      borderRadius: '1rem'
+    }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link to="/" style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: 'var(--font-display)' }}>
           <span className="gradient-text">Portfolio.</span>
